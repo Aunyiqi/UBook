@@ -1,257 +1,359 @@
-# UBook Booking Conflict Manager
+# MMU VENUE BOOKING SYSTEM FOR MELAKA CAMPUS
 
-A comprehensive web-based booking administration system for the **UBook Campus Venue Booking System**. This module enables booking administrators and super administrators to manage venue reservations, detect scheduling conflicts, communicate with users via email, and receive AI-powered assistance.
+<p align="center">
+
+![PHP](https://img.shields.io/badge/PHP-8+-777BB4?style=for-the-badge&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)
+![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript)
+![PHPMailer](https://img.shields.io/badge/PHPMailer-Email_Service-blue?style=for-the-badge)
+![DeepSeek AI](https://img.shields.io/badge/AI-DeepSeek-orange?style=for-the-badge)
+
+</p>
 
 ---
 
-## Features
+## Project Overview
 
-### Booking Management
-- View all bookings
+**UBook Booking Conflict Manager** is a comprehensive web-based administration module developed for the **UBook Campus Venue Booking System**.
+
+The system provides an efficient platform for booking administrators and super administrators to manage campus venue reservations, identify scheduling conflicts, communicate with users through email notifications, and utilize artificial intelligence assistance for improved decision-making.
+
+By integrating automated conflict detection, calendar visualization, email communication, and AI-powered analysis, the system improves the efficiency, reliability, and accuracy of venue booking management.
+
+---
+
+# Features
+
+## Booking Management
+
+The system provides complete booking administration capabilities:
+
+- View all booking records
 - Create new bookings
-- Edit existing bookings
+- Update existing bookings
 - Delete bookings
-- Confirm or reject booking requests
-- Search bookings
-- Filter by booking status
-- Pagination support
-- Export bookings to CSV
+- Approve or reject booking requests
+- Search booking records
+- Filter bookings based on status
+- Pagination support for large datasets
+- Export booking records into CSV format
 
 ---
 
-### Conflict Detection
+## Conflict Detection System
 
-Automatically detects:
+The system automatically analyzes booking conditions and identifies potential conflicts.
 
-- Time overlaps
-- Public holiday bookings
-- Past date bookings
-- Outside operating hours
-- Maximum booking duration exceeded
-- User daily booking limit exceeded
+Supported conflict detection includes:
 
-Conflict bookings are highlighted throughout the system.
+| Conflict Type | Description |
+|---------------|-------------|
+| Time Overlap | Detects overlapping bookings within the same venue |
+| Public Holiday | Prevents bookings during registered public holidays |
+| Past Date | Rejects booking requests with previous dates |
+| Operating Hours | Ensures bookings follow venue operating hours |
+| Duration Limit | Prevents bookings exceeding the maximum allowed duration |
+| User Quota | Controls the maximum number of daily bookings per user |
+
+Detected conflicts are displayed clearly throughout the booking management interface.
 
 ---
 
-### Calendar View
+## Calendar Management
 
-Interactive FullCalendar integration:
+The system integrates **FullCalendar** to provide an interactive scheduling interface.
+
+Administrators can view:
 
 - Pending bookings
 - Confirmed bookings
 - Rejected bookings
 - Conflict bookings
-- Booking details popup
+- Detailed booking information
+
+The calendar view provides better visibility of venue availability and scheduling issues.
 
 ---
 
-### Automatic Booking Rules
+## Automated Booking Rules
 
-#### Auto Reject
+The system applies automated validation rules to maintain booking accuracy.
 
-Automatically rejects:
+### Automatic Rejection
 
-- Expired pending bookings
-- Bookings with unresolved conflicts
+Pending bookings may be automatically rejected when:
 
----
-
-### Email Notifications
-
-Uses PHPMailer with Gmail SMTP.
-
-Automatically sends emails when:
-
-- Booking confirmed
-- Booking rejected
-
-Supports:
-
-- Custom emails
-- HTML emails
-- BCC logging
+- The booking time has expired
+- Scheduling conflicts cannot be resolved
+- Booking conditions violate system rules
 
 ---
 
-### AI Assistant (DeepSeek)
+## Email Notification System
 
-Integrated AI assistant capable of:
+The system uses **PHPMailer with Gmail SMTP** to provide automated communication.
 
-- Answering booking questions
-- Detecting conflicts
-- Reviewing venue usage
-- Reading booking comments
-- Sending custom emails
-- Confirming/rejecting bookings
-- Multi-turn conversation history
+Email notifications are triggered when:
+
+- A booking is confirmed
+- A booking is rejected
+
+Additional email features include:
+
+- Custom email communication
+- HTML email formatting
+- Email tracking through BCC logging
 
 ---
 
-### Audit Log
+## Artificial Intelligence Assistant
 
-Every important action is logged:
+The system integrates the **DeepSeek Chat API** to provide AI-powered administrative support.
+
+The AI assistant is capable of:
+
+- Answering booking-related queries
+- Identifying booking conflicts
+- Analysing venue utilization
+- Reviewing venue comments
+- Sending customized emails
+- Updating booking status
+- Maintaining multi-turn conversation history
+
+---
+
+## Audit Logging
+
+The system records important administrative activities to improve transparency and accountability.
+
+Logged activities include:
 
 - Booking creation
-- Booking updates
+- Booking modification
 - Booking deletion
-- Status changes
-- Auto rejections
+- Booking status changes
+- Automatic rejection actions
 
 ---
 
-### Statistics Dashboard
+## Statistics Dashboard
 
-Displays:
+The administration dashboard provides real-time booking statistics:
 
-- Total bookings
-- Pending bookings
-- Confirmed bookings
-- Rejected bookings
-
----
-
-## Technologies Used
-
-Backend
-
-- PHP
-- MySQL
-- PHPMailer
-- cURL
-
-Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Font Awesome
-- FullCalendar
-- Marked.js
-- DOMPurify
-
-AI
-
-- DeepSeek Chat API
+| Statistic | Description |
+|-----------|-------------|
+| Total Bookings | Displays all booking records |
+| Pending Bookings | Shows waiting approval requests |
+| Confirmed Bookings | Displays approved reservations |
+| Rejected Bookings | Displays declined reservations |
 
 ---
 
-## Database Tables
+# Technologies Used
 
-Expected tables include:
+## Backend Technologies
 
-- users
-- venues
-- bookings
-- audit_log
-- venue_comments
+| Technology | Purpose |
+|-----------|---------|
+| PHP | Server-side application development |
+| MySQL | Database management |
+| PHPMailer | Email communication |
+| cURL | API communication |
 
 ---
 
-## Booking Rules
+## Frontend Technologies
+
+| Technology | Purpose |
+|-----------|---------|
+| HTML5 | Web page structure |
+| CSS3 | Interface styling |
+| JavaScript | Client-side interaction |
+| Font Awesome | User interface resources |
+| FullCalendar | Calendar visualization |
+| Marked.js | Markdown rendering |
+| DOMPurify | HTML sanitization |
+
+---
+
+## Artificial Intelligence
+
+| Technology | Purpose |
+|-----------|---------|
+| DeepSeek Chat API | AI-powered booking analysis and assistance |
+
+---
+
+# Database Structure
+
+The system requires the following database tables:
+
+| Table | Description |
+|-------|-------------|
+| users | Stores user information |
+| venues | Stores venue information |
+| bookings | Stores booking records |
+| audit_log | Stores administrator activities |
+| venue_comments | Stores venue feedback |
+
+---
+
+# Booking Configuration
 
 | Rule | Value |
 |------|-------|
 | Opening Hour | 8:00 AM |
 | Closing Hour | 10:00 PM |
-| Maximum Duration | 4 hours |
-| Maximum Daily Bookings | 3 per user |
+| Maximum Booking Duration | 4 Hours |
+| Maximum Daily Booking Limit | 3 Bookings Per User |
 
 ---
 
-## User Roles
+# User Authorization
 
-Only the following roles may access this page:
+The booking administration module is restricted to authorized users only.
 
-- booking_admin
-- super_admin
+Supported roles:
 
-Unauthorized users are redirected to the login page.
+| Role | Permission |
+|------|------------|
+| booking_admin | Booking management access |
+| super_admin | Full administrative access |
+
+Unauthorized users will be redirected to the login page.
 
 ---
 
-## CSV Export
+# CSV Export Functionality
 
-Exports:
+Administrators can export booking records containing:
 
 - Booking ID
-- Student
-- Email
-- Venue
-- Date
-- Time
+- Student Name
+- Email Address
+- Venue Name
+- Booking Date
+- Booking Time
 - Duration
 - Comment
-- Status
+- Booking Status
 
 ---
 
-## Public Holiday Support
+# Public Holiday Support
 
-Built-in Malaysian public holidays are included for:
+The system includes Malaysian public holiday validation from:
 
-- 2026
-- 2027
-- 2028
-- 2029
-- 2030
+| Year |
+|------|
+| 2026 |
+| 2027 |
+| 2028 |
+| 2029 |
+| 2030 |
 
-Bookings on these dates are automatically flagged as conflicts.
-
----
-
-## Email Configuration
-
-The project currently uses Gmail SMTP through PHPMailer.
-
-SMTP settings are configured directly inside the PHP file.
-
-For production deployment, move credentials into environment variables instead of hardcoding them.
+Bookings created on public holidays will automatically be identified as conflicts.
 
 ---
 
-## AI Features
+# Email Configuration
 
-The AI assistant can:
+The system currently uses Gmail SMTP through PHPMailer.
 
-- Summarize bookings
-- Detect scheduling conflicts
-- Analyze venue usage
-- Read venue comments
-- Send custom emails
-- Update booking status
-- Maintain conversation history
+SMTP configuration includes:
+
+- SMTP server settings
+- Authentication credentials
+- Email sender information
+- Secure email transmission
+
+For production deployment, sensitive information such as SMTP credentials should be stored using environment variables.
 
 ---
 
-## Security
+# Security Implementation
 
-Current protections include:
+Current security mechanisms include:
 
 - Session authentication
 - Role-based authorization
 - Prepared SQL statements
-- UTF-8 support
-- Audit logging
+- UTF-8 character support
+- Administrative audit logging
 
-Recommended improvements:
+Recommended production improvements:
 
-- Store API keys in environment variables
-- Store SMTP credentials securely
-- Enable CSRF protection
-- Rate-limit AJAX endpoints
-- Validate all user inputs
-- Enable HTTPS in production
+- Store API keys securely using environment variables
+- Protect SMTP credentials
+- Implement CSRF protection
+- Apply AJAX request rate limiting
+- Strengthen input validation
+- Enable HTTPS encryption
 
 ---
 
-## Installation
+# Installation Guide
 
-1. Clone the project.
+## Step 1: Clone the Repository
 
-2. Import the MySQL database.
+```bash
+git clone <repository-url>
+```
 
-3. Install dependencies:
+## Step 2: Import Database
+
+Import the provided MySQL database file into your database server.
+
+## Step 3: Install Dependencies
 
 ```bash
 composer install
+```
+
+## Step 4: Configure System Settings
+
+Update:
+
+- Database configuration
+- SMTP settings
+- DeepSeek API configuration
+
+## Step 5: Run Application
+
+Deploy the project using:
+
+- XAMPP
+- Apache Server
+- PHP Development Server
+
+---
+
+# Project Information
+
+| Information | Details |
+|------------|---------|
+| Project Name | MMU Venue Booking System in Melaka Campus |
+| Developer | Aun Yi Qi |
+| Student ID | 1221103276 |
+| System Type | Web-based Booking Administration System |
+
+---
+
+# Future Enhancements
+
+Future improvements may include:
+
+- Real-time notification system
+- Mobile application support
+- Google Calendar integration
+- Advanced analytics dashboard
+- Multi-language support
+- QR code attendance verification
+- REST API development
+- Enhanced permission management
+
+---
+
+# License
+
+This project was developed as part of an academic project for educational purposes.
