@@ -1,132 +1,135 @@
-# 🚀 UBook – AI-Enhanced Campus Venue Booking System
+# UBook – AI-Enhanced Campus Venue Booking System
 
-<p align="center">
+## Overview
 
-![PHP](https://img.shields.io/badge/PHP-8+-777BB4?style=for-the-badge&logo=php)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)
-![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-F7DF1E?style=for-the-badge&logo=javascript)
-![DeepSeek AI](https://img.shields.io/badge/AI-DeepSeek-orange?style=for-the-badge)
-![PHPMailer](https://img.shields.io/badge/Email-PHPMailer-blue?style=for-the-badge)
-![XAMPP](https://img.shields.io/badge/Server-XAMPP-orange?style=for-the-badge)
+UBook is an AI-enhanced web-based campus venue booking system developed as a Final Year Project for Multimedia University (MMU) Melaka Campus.
 
-</p>
+The system is designed to replace traditional email-based venue reservation processes with a centralized intelligent platform that improves booking efficiency, reduces administrative workload, prevents scheduling conflicts, and enhances communication between students and administrators.
+
+UBook integrates Artificial Intelligence, automated booking validation, community collaboration, and notification services into a single campus venue management solution.
 
 ---
 
-# 📌 Overview
-
-UBook is an **AI-enhanced web-based campus venue booking system** developed as a Final Year Project for **Multimedia University (MMU) Melaka Campus**.
-
-The system aims to replace traditional email-based venue reservation processes with an intelligent centralized platform that improves booking efficiency, reduces administrative workload, prevents scheduling conflicts, and enhances communication between students and administrators.
-
-UBook integrates Artificial Intelligence, automated validation, community collaboration, and notification services into a single campus venue management platform.
-
-## Key Capabilities
-
-- 🤖 AI-powered natural language booking assistant
-- 🏢 Venue search and reservation management
-- ⚠️ Automated booking conflict detection
-- 📅 Interactive booking calendar
-- 👥 Community collaboration platform
-- 📧 Automated email notification system
-- 📊 Administrative dashboard and audit tracking
-
-
-## Technology Stack
-
-- PHP 8+
-- MySQL
-- HTML5
-- CSS3
-- JavaScript
-- AJAX
-- DeepSeek Chat API
-- PHPMailer
-- FullCalendar
-
-
----
-
-# 🎯 Project Objectives
+# Project Objectives
 
 The objectives of UBook are:
 
-1. Develop an AI assistant capable of understanding natural language venue booking requests.
+1. To develop an AI assistant capable of understanding natural language venue booking requests.
 
-2. Provide an intelligent venue reservation platform with automated conflict detection.
+2. To provide an intelligent venue reservation platform with automated conflict detection and validation.
 
-3. Reduce manual administrative workload through automated workflows.
+3. To reduce manual administrative workload through automated booking workflows.
 
-4. Improve booking accuracy and communication efficiency.
+4. To improve booking accuracy, transparency, and communication efficiency.
 
-5. Support student collaboration through community features.
+5. To support student collaboration through community-based features.
 
-6. Provide administrators with monitoring, analytics, and audit capabilities.
-
+6. To provide administrators with monitoring, analytics, and audit capabilities.
 
 ---
 
-# 🏗️ System Architecture
+# Technology Stack
+
+## Backend Technologies
+
+| Technology | Purpose |
+|---|---|
+| PHP 8+ | Server-side application development |
+| MySQL | Database management |
+| PHPMailer | Email notification service |
+| cURL | API communication |
+
+## Frontend Technologies
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Web interface structure |
+| CSS3 | Interface styling |
+| JavaScript | Client-side interaction |
+| AJAX | Asynchronous communication |
+| FullCalendar | Calendar visualization |
+| Font Awesome | User interface icons |
+| Marked.js | Markdown rendering |
+| DOMPurify | Frontend content sanitization |
+
+## Artificial Intelligence
+
+| Technology | Purpose |
+|---|---|
+| DeepSeek Chat API | AI conversational assistant and natural language processing |
+
+## Development Environment
+
+| Technology | Purpose |
+|---|---|
+| XAMPP | Local development server |
+| phpMyAdmin | Database administration |
+| Composer | PHP dependency management |
+
+---
+
+# System Architecture
 
 
-                User
-                  |
-                  ↓
-           Web Browser
-                  |
-                  ↓
-          PHP Application
+              User
+                |
+                |
+          Web Browser
+                |
+                |
+        PHP Application Layer
+                |
+    --------------------------------
+    |              |               |
+    |              |               |
 
+Booking Module AI Assistant Community Module
 | | |
-Booking AI Assistant Community
-Module Module Module
-
-                  |
-                  ↓
-
-      Conflict Detection Engine
-
-                  |
-                  ↓
-
-          MySQL Database
-
-                  |
-    -----------------------------
-    |                           |
-
-DeepSeek Chat API Gmail SMTP
+--------------------------------
+|
+|
+Conflict Detection Engine
+|
+|
+MySQL Database
+|
+---------------------
+| |
+DeepSeek Chat API Gmail SMTP Server
 
 
 
 ---
 
-# 🤖 AI Booking Assistant
+# Core System Modules
 
+## 1. AI Booking Assistant Module
 
-UBook integrates the **DeepSeek Chat API** to provide intelligent conversational booking assistance.
+UBook integrates the DeepSeek Chat API to provide conversational booking assistance.
 
 The AI assistant supports:
 
-- Natural language understanding
+- Natural language booking requests
 - Booking information extraction
 - Venue recommendation
 - Availability checking
 - Conflict explanation
 - Booking guidance
 - Administrative assistance
-- Email drafting
+- Email drafting support
 
 
-## Example AI Booking Request
+### Example Booking Process
 
+User Request:
 
-
-User:
 
 Book the Main Hall tomorrow from 2 PM to 5 PM for a club event.
 
-AI Processing:
+
+
+AI Extraction:
+
 
 Venue:
 Main Hall
@@ -142,39 +145,23 @@ Club Event
 
 
 
-After extracting booking information, the system performs server-side validation before creating the reservation.
-
-
----
-
-# 📦 System Modules
-
-
-# 1. AI Booking Module
-
-Features:
-
-- Natural language booking
-- Multi-turn conversation
-- AI-assisted reservation
-- Smart venue recommendation
-- Booking explanation
-
+After extracting the required information, the system performs server-side validation before creating the booking request.
 
 ---
 
-# 2. Venue Booking Management
+# 2. Venue Booking Management Module
 
+The booking management module provides complete reservation management functionality.
 
 Features:
 
 - Create bookings
 - Edit bookings
 - Delete bookings
-- Booking approval
-- Booking rejection
-- Search bookings
-- Filter bookings
+- Booking approval workflow
+- Booking rejection workflow
+- Booking search
+- Booking filtering
 - CSV export
 - Pagination
 - Calendar management
@@ -182,40 +169,36 @@ Features:
 
 ---
 
-# 3. Intelligent Conflict Detection
+# 3. Intelligent Conflict Detection Module
 
+The system automatically validates every booking request before submission.
 
-The system automatically validates booking requests before submission.
-
+## Validation Rules
 
 | Validation | Description |
 |---|---|
-| Time Overlap Detection | Prevents duplicate reservations |
-| Public Holiday Checking | Blocks unavailable dates |
-| Operating Hours Validation | Ensures valid booking time |
-| Past Date Validation | Prevents outdated requests |
-| Duration Restriction | Limits booking duration |
+| Time Overlap Detection | Prevents multiple bookings for the same venue and time |
+| Public Holiday Checking | Blocks bookings on unavailable dates |
+| Operating Hours Validation | Ensures bookings are within allowed hours |
+| Past Date Validation | Prevents booking previous dates |
+| Duration Restriction | Limits maximum booking duration |
 | Daily Booking Quota | Controls excessive booking requests |
 
 
-## Booking Rules
-
+## Booking Constraints
 
 | Rule | Value |
 |---|---|
 | Opening Hours | 8:00 AM |
 | Closing Hours | 10:00 PM |
-| Maximum Duration | 4 Hours |
+| Maximum Booking Duration | 4 Hours |
 | Daily Booking Limit | 3 Bookings |
-
 
 ---
 
-# 4. Community Collaboration Platform
+# 4. Community Collaboration Module
 
-
-The community module enables students to organize campus activities and communicate with other users.
-
+The community module enables students to collaborate and communicate regarding campus activities.
 
 Features:
 
@@ -229,13 +212,11 @@ Features:
 
 ---
 
-# 5. Email Notification System
+# 5. Email Notification Module
 
+The email notification system is implemented using PHPMailer with Gmail SMTP.
 
-Implemented using **PHPMailer with Gmail SMTP**.
-
-
-Automatically sends:
+The system automatically sends:
 
 - Booking confirmation emails
 - Booking rejection notifications
@@ -245,10 +226,11 @@ Automatically sends:
 
 ---
 
-# 📅 Calendar Management
+# Calendar Management
 
+The FullCalendar integration provides an interactive booking schedule.
 
-The integrated FullCalendar provides:
+Features:
 
 - Pending booking display
 - Approved booking display
@@ -260,11 +242,9 @@ The integrated FullCalendar provides:
 
 ---
 
-# 📊 Administrator Dashboard
+# Administrator Dashboard
 
-
-The dashboard provides system monitoring and analytics.
-
+The administrator dashboard provides system monitoring and management capabilities.
 
 ## Dashboard Information
 
@@ -277,66 +257,54 @@ Displays:
 - Recent activities
 
 
-## Audit Log
+## Audit Logging
 
+The system records:
 
-Tracks:
-
-
-Booking Created
-
-Booking Updated
-
-Booking Deleted
-
-Booking Approved
-
-Booking Rejected
-
-Automatic System Actions
-
+- Booking creation
+- Booking updates
+- Booking deletion
+- Booking approval
+- Booking rejection
+- Automatic system actions
 
 
 ---
 
-# 🗄️ Database Structure
-
+# Database Structure
 
 | Table | Description |
 |---|---|
-| users | User accounts and authentication |
-| venues | Venue information |
-| bookings | Booking records |
-| venue_comments | Venue reviews |
-| comment_likes | Comment interactions |
-| chat_private_messages | Private conversations |
-| chat_groups | Group conversations |
-| chat_group_messages | Group messages |
-| chat_group_participants | Group membership |
+| users | User account information and authentication data |
+| venues | Venue information and availability details |
+| bookings | Venue reservation records |
+| venue_comments | Venue reviews and comments |
+| comment_likes | User interactions with comments |
+| chat_private_messages | Private user conversations |
+| chat_groups | Community group information |
+| chat_group_messages | Group conversation records |
+| chat_group_participants | Group membership records |
 | audit_log | System activity tracking |
 
 
 ---
 
-# 👤 User Roles
-
+# User Roles
 
 | Role | Permission |
 |---|---|
-| Student | Search venues, create bookings, use AI assistant, join communities |
-| Booking Administrator | Manage bookings and approval workflow |
-| Super Administrator | Full system administration |
+| Student | Search venues, create bookings, use AI assistant, participate in communities |
+| Booking Administrator | Manage booking requests and approval processes |
+| Super Administrator | Perform full system administration |
 
 
 ---
 
-# 🔐 Security Features
+# Security Implementation
 
+## Authentication Security
 
-Implemented security mechanisms:
-
-
-## Authentication
+Implemented:
 
 - Session-based authentication
 - Role-based access control
@@ -344,22 +312,30 @@ Implemented security mechanisms:
 
 ## Database Security
 
+Implemented:
+
 - Prepared SQL statements
 - Input validation
 
 
 ## Frontend Security
 
+Implemented:
+
 - HTML sanitization
 - DOMPurify protection
 
 
-## Monitoring
+## Monitoring Security
+
+Implemented:
 
 - Audit logging
 
 
-## Recommended Improvements
+## Recommended Security Improvements
+
+Future improvements:
 
 - HTTPS deployment
 - CSRF protection
@@ -369,20 +345,18 @@ Implemented security mechanisms:
 
 ---
 
-# 🧪 Testing
-
+# Testing
 
 ## Unit Testing
-
 
 Tested components:
 
 - Time conversion functions
-- Conflict detection logic
-- Booking validation
+- Conflict detection algorithms
+- Booking validation logic
 
 
-Result:
+Testing Result:
 
 
 13 Tests Passed
@@ -392,58 +366,17 @@ Result:
 
 ## User Acceptance Testing
 
-
-Evaluation focused on:
+The evaluation focused on:
 
 - System usability
 - AI assistant effectiveness
 - Booking experience
-- Overall satisfaction
+- Overall user satisfaction
 
 
 ---
 
-# 🛠️ Technologies
-
-
-## Backend
-
-
-| Technology | Purpose |
-|---|---|
-| PHP 8+ | Server-side development |
-| MySQL | Database management |
-| PHPMailer | Email communication |
-| cURL | API communication |
-
-
-## Frontend
-
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Interface structure |
-| CSS3 | Styling |
-| JavaScript | Client interaction |
-| AJAX | Asynchronous communication |
-| FullCalendar | Calendar visualization |
-| Font Awesome | Icons |
-| Marked.js | Markdown rendering |
-| DOMPurify | Security sanitization |
-
-
-## Artificial Intelligence
-
-
-| Technology | Purpose |
-|---|---|
-| DeepSeek Chat API | AI conversational assistant |
-
-
----
-
-# 📂 Folder Structure
-
+# Folder Structure
 
 
 UBook/
@@ -463,66 +396,61 @@ UBook/
 
 ---
 
-# ⚙️ Installation
+# Installation Guide
 
-
-## Clone Repository
-
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/UBook.git
-Install Dependencies
+2. Install Dependencies
 composer install
-Database Setup
+3. Database Setup
 
-Import:
+Import the database file:
 
 database/ubook.sql
-Configure System
+4. System Configuration
 
-Update:
+Configure:
 
 Database credentials
-
-SMTP configuration
-
-DeepSeek API Key
-
-Run Application
+SMTP settings
+DeepSeek API key
+5. Run Application
 
 Supported environments:
 
 XAMPP
 WAMP
-Apache
+Apache Server
 PHP Development Server
-📸 Screenshots
+Screenshots
 
 Recommended screenshots:
 
 Homepage
-AI Booking Assistant
-Venue Search
+AI Booking Assistant Interface
+Venue Search Page
 Booking Form
-Calendar View
+Calendar Management
 Community Platform
-Conflict Detection
+Conflict Detection Result
 Administrator Dashboard
-🚀 Future Enhancements
+Future Enhancements
 
 Planned improvements:
 
-Mobile application
+Mobile application development
 Google Calendar integration
-Push notifications
+Push notification support
 QR attendance verification
 REST API development
-Advanced analytics
-AI booking prediction
+Advanced booking analytics
+AI-based booking prediction
 University authentication integration
-👨‍💻 Project Information
+Project Information
 Item	Details
-Project	UBook – AI-Enhanced Campus Venue Booking System
+Project Name	UBook – AI-Enhanced Campus Venue Booking System
 Developer	Aun Yi Qi
 Student ID	1221103276
 Institution	Multimedia University (MMU), Malaysia
