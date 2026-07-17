@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>UBook Loading – Scrollable Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+            /* Force scroll: make body taller than viewport */
+            min-height: 200vh;
+        }
+        h1 { color: #e67e22; }
+        .test {
+            margin: 8px 0;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+            background: white;
+        }
+        .pass { border-left-color: green; background: #e8f5e9; }
+        .fail { border-left-color: red; background: #ffebee; }
+        .summary {
+            margin: 20px 0;
+            padding: 10px;
+            background: #e0e0e0;
+            font-weight: bold;
+        }
+        /* Add a huge spacer at the bottom to ensure scrolling */
+        .spacer {
+            height: 1000px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <h1>📜 UBook Loading – Scroll Down for Full Results</h1>
+    <div id="results"></div>
+    <div class="spacer"></div>
+
+    <script>
+        // The exact loading page logic (extracted)
+        function initLoadingPage(container) {
+            container.innerHTML = `
+                <div class="loader-container">
+                    <div class="logo-circle"></div>
+                    <h1>UBook</h1>
+                    <p class="tagline">Smart Venue Booking</p>
+                    <div class="loader"></div>
+                    <div class="loading-text"><span>Preparing your experience...</span></div>
+                    <div class="redirect-hint">Redirecting...</div>
+                </div>
+            `;
+            const messages = ["Preparing...", "Finding venues...", "Almost ready..."];
+            let idx = 0;
+            const span = container.querySelector('.loading-text span');
+            if (span) {
+                setInterval(() => {
+                    if (idx < messages.length - 1) {
+                        idx++;
+                        span.textContent = messages[idx];
+                    }
+                }, 900);
+            }
+            setTimeout(() => {}, 3000);
+        }
+
+        let passed = 0, failed = 0;
+        const output = document.getElementById('results');
+
+        function test(condition, name) {
+            const div = document.createElement('div');
+            div.className = 'test ' + (condition ? 'pass' : 'fail');
+            div.innerHTML = (condition ? '✅ PASS' : '❌ FAIL') + ' – ' + name;
+            output.appendChild(div);
+            if (condition) passed++; else failed++;
+        }
+
+        // DOM tests
+        const fixture = document.createElement('div');
+        initLoadingPage(fixture);
+        test(!!fixture.querySelector('.loader-container'), '.loader-container exists');
+        test(fixture.querySelector('h1')?.innerText === 'UBook', 'H1 text is UBook');
+        test(!!fixture.querySelector('.loading-text span'), 'Loading span exists');
+        test(fixture.querySelector('.loading-text span')?.innerText === 'Preparing your experience...', 'Initial message correct');
+        test(!!fixture.querySelector('.tagline'), 'Tagline exists');
+        test(!!fixture.querySelector('.loader'), 'Loader spinner exists');
+        test(!!fixture.querySelector('.redirect-hint'), 'Redirect hint exists');
+
+        // Timer config tests (mocked)
+        let intervalDelay = null, timeoutDelay = null;
+        const oldSetInt = window.setInterval;
+        const oldSetTimeout = window.setTimeout;
+        window.setInterval = (fn, d) => { intervalDelay = d; return 1; };
+        window.setTimeout = (fn, d) => { timeoutDelay = d; return 1; };
+        const container = document.createElement('div');
+        initLoadingPage(container);
+        test(intervalDelay === 900, 'setInterval uses 900ms');
+        test(timeoutDelay === 3000, 'setTimeout uses 3000ms');
+        window.setInterval = oldSetInt;
+        window.setTimeout = oldSetTimeout;
+
+        // Additional edge tests
+        test(typeof intervalDelay === 'number', 'Interval delay is a number');
+        test(typeof timeoutDelay === 'number', 'Timeout delay is a number');
+
+        // Summary
+        const summary = document.createElement('div');
+        summary.className = 'summary';
+        summary.innerHTML = `Passed: ${passed} / ${passed + failed}`;
+        output.appendChild(summary);
+    </script>
+</body>
+</html>

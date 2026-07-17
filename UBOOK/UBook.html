@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBook | Venue Booking</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes helloPop {
+      0% { 
+        opacity: 0;
+        transform: scale(0.5) translateY(30px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2) translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    
+    @keyframes helloGlow {
+      0%, 100% {
+        text-shadow: 0 0 30px rgba(255,255,255,0.4);
+        letter-spacing: 4px;
+      }
+      50% {
+        text-shadow: 0 0 80px rgba(255,255,255,0.9);
+        letter-spacing: 10px;
+      }
+    }
+    
+    @keyframes ubookGlow {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(255,107,0,0.4);
+      }
+      50% {
+        text-shadow: 0 0 50px rgba(255,107,0,0.8);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes buttonPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,107,0,0.7); }
+      50% { transform: scale(1.08); box-shadow: 0 0 0 15px rgba(255,107,0,0); }
+    }
+    
+    .animate-fade-in-scale {
+      animation: fadeInScale 0.5s ease-out;
+    }
+    
+    .animate-hello-pop {
+      animation: helloPop 0.8s ease-out forwards;
+    }
+    
+    .animate-hello-glow {
+      animation: helloGlow 2s ease-in-out infinite;
+    }
+    
+    .animate-ubook-glow {
+      animation: ubookGlow 2s ease-in-out infinite;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-button {
+      animation: buttonPulse 2s ease-in-out infinite;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body class="overflow-hidden">
+  <!-- Background Video -->
+  <div class="fixed inset-0 w-full h-full -z-10">
+    <video 
+      class="w-full h-full object-cover"
+      autoplay 
+      loop 
+      muted 
+      playsinline
+    >
+      <source src="load.mp4" type="video/mp4">
+    </video>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-orange-900/40"></div>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="min-h-screen flex items-center justify-center px-4">
+    <div class="text-center animate-fade-in-scale">
+      
+      <!-- Hello Text - White Color - Bigger & Bolder -->
+      <div class="mb-8">
+        <h2 class="text-8xl md:text-9xl font-black text-white animate-hello-pop animate-hello-glow tracking-wider" style="animation: helloPop 0.8s ease-out, helloGlow 2s ease-in-out infinite;">
+          HELLO!
+        </h2>
+      </div>
+      
+      <!-- UBook Text - Orange Gradient - Bigger & Bolder -->
+      <div class="mb-6 animate-float">
+        <h1 class="text-7xl md:text-8xl font-black bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent animate-ubook-glow tracking-tight">
+          UBook
+        </h1>
+      </div>
+      
+      <p class="text-white/70 text-base md:text-lg font-semibold mb-14 tracking-wide">Smart Venue Booking for Campus Life</p>
+      
+      <!-- Get Started Button - Bigger -->
+      <button 
+        onclick="window.location.href='login.php'"
+        class="group relative px-10 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold text-lg rounded-full shadow-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 animate-button"
+      >
+        <span class="relative z-10 flex items-center gap-3">
+          Get Started
+          <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+</html>
